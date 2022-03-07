@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spotify - Web Player</title>
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/fd5018a833.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="script.css">
+</head>
+
+<body>
+    
+    <div class="loaderbg">
+        <div class="loader"></div>
+    </div>
+
+    <div class="navBar">
+
+        <div>
+            <a href="index.html"><img class="logo" src="Images/navLogo.png" alt="Error"></a>
+
+            <div class="part">
+                <div class="button">
+                    <img src="https://img.icons8.com/material-rounded/22/ffffff/home.png" /><a href="index.html">Home</a>
+                </div>
+                <div class="button">
+                    <img src="https://img.icons8.com/ios-glyphs/22/ffffff/search--v1.png" /><a target="_blank"
+                        href="https://open.spotify.com/search">Search</a>
+                </div>
+                <div class="button">
+                    <img
+                        src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/22/ffffff/external-playlist-music-royyan-wijaya-detailed-outline-royyan-wijaya.png" /><a
+                        href="library.html">Your Library</a>
+                </div> <br>
+                <div class="button bold"><img class="bgPlus"
+                        src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/20/000000/external-plus-user-interface-tanah-basah-detailed-outline-tanah-basah-2.png" /><a
+                        href="#">Create Playlist</a>
+                </div>
+                <div class="button bottomLine bold">
+                    <img class="bgHeart" src="https://img.icons8.com/ios-glyphs/16/ffffff/like--v1.png" /><a
+                        href="liked.html">Liked
+                        Songs</a>
+                </div>
+            </div>
+        </div>
+        <div class="button download bold">
+            <img
+                src="https://img.icons8.com/external-those-icons-lineal-those-icons/23/ffffff/external-down-arrows-those-icons-lineal-those-icons.png" /><a
+                href="https://open.spotify.com/download" target="_blank">Install App</a>
+        </div>
+    </div>
+
+    <div class="player">
+
+        <div class="horizontal">
+            <img class="playerImg" src="Images/null.png" alt="Error">
+
+            <div class="vertical">
+                <div id="name1" class="underline bold">No Track Playing</div>
+                <div>
+                    <marquee id="name2" class="underline"> Pick Your Song</marquee>
+                </div>
+            </div>
+
+            <div title="Save To Your Library" class="favourite"><i class="fas fa-heart"></i></div>
+
+            <div title="YouTube" class="favourite"><i class="fas fa-play"></i></div>
+        </div>
+
+
+        <div class="controlProgress">
+            <div class="vertical">
+                <div class="controls horizontal">
+                    <i title="Shuffle" style="font-size: 1.2rem;" class="fas fa-sort" id="shuffle"></i>
+                    <i title="Previous" style="font-size: 1.2rem;" class="fas fa-solid fa-backward" id="prev"></i>
+                    <i class="fa-3x fas fa-solid fa-play-circle" id="playPause"></i>
+                    <i title="Next" style="font-size: 1.2rem;" class="fas fa-solid fa-forward" id="next"></i>
+                    <i title="Repeat" id="loop" style="font-size: 1.2rem;" class="fas fa-recycle"></i>
+                </div>
+
+                <div class="progressBar horizontal">
+                    <div id="start">00:00</div>
+                    <input type="range" class="progress" min="0" value="0" max="100">
+                    <div id="end">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features horizontal">
+
+            <div title="Lyrics" class="lyrics"><a id="lyricsLink" href="#"><i class="fas fa-music"></i></a>
+            </div>
+
+            <div title="Queue" class="queue"><a id="lyricsLink" href="#"><i class="fas fa-list"></i></a>
+            </div>
+
+            <div class="volume horizontal">
+                <img class="mute hidden" src="https://img.icons8.com/ios/50/ffffff/no-audio--v1.png" />
+                <img class="mute hidden" src="https://img.icons8.com/ios/50/ffffff/low-volume.png" />
+                <img class="mute" src="https://img.icons8.com/ios/50/ffffff/high-volume--v1.png" />
+                <input id="volumeBar" type="range" class="vol" min="0" value="100" max="100">
+            </div>
+
+        </div>
+    </div>
+
+    <main>
+        <div class="top">
+
+            <div class="horizontal">
+                <a href="#" class="circle"><i class="fas fa-angle-left"></i></a>
+                <a href="#" class="circle"><i class="fas fa-angle-right"></i></a>
+            </div>
+
+            <div class="horizontal">
+                <a target="_blank" href="https://www.spotify.com/us/premium/" class="upgrade">UPGRADE</a>
+                <div class="profile horizontal">
+                    <img class="userImg" src="Images/face.jpg" alt="">
+                    <div class="userName">theorangeyakco</div>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <h1 id="greeting">Good Afternoon</h1>
+        <div class="playlists">
+            <a href="https://open.spotify.com/playlist/37i9dQZF1EVJSvZp5AOML2" class="playlist horizontal">
+                <img src="Images/play1.jpg" alt="">
+                <div class="bold">Happy Mix</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZEVXbLZ52XmnySJg" class="playlist horizontal">
+                <img src="Images/play2.jpg" alt="">
+                <div class="bold">Top 50 - India</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF" class="playlist horizontal">
+                <img src="Images/play4.jpg" alt="">
+                <div class="bold">Top 50 - Global</div>
+            </a>
+            <a href="https://open.spotify.com/artist/5C1S9XwxMuuCciutwMhp5t" class="playlist horizontal">
+                <img src="Images/play3.jpg" alt="">
+                <div class="bold">KR$NA & Others</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX9tPFwDMOaN1" class="playlist horizontal">
+                <img src="Images/play5.jpg" alt="">
+                <div class="bold">K-Pop ON!</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn" class="playlist horizontal">
+                <img src="Images/play6.jpg" alt="">
+                <div class="bold">Lofi Beats</div>
+            </a>
+        </div>
+
+        <h1>Made For You</h1>
+        <div class="containerBox">
+            <a href="https://open.spotify.com/playlist/37i9dQZF1E36VNz7Jklaso" class="container vertical">
+                <img class="containerImg" src="Images/mix1.jpg" alt="">
+                <div class="containerTitle">Daily Mix 1</div>
+                <div class="containerArtists">Taylor Swift, Adele, Doja Cat and more</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1E361YB82MirGc" class="container vertical">
+                <img class="containerImg" src="Images/mix2.jpg" alt="">
+                <div class="containerTitle">Daily Mix 2</div>
+                <div class="containerArtists">AP Dhillon, Prem Dhillon, Korala Maan and more</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1E35yHxtW8o0p7" class="container vertical">
+                <img class="containerImg" src="Images/mix3.jpg" alt="">
+                <div class="containerTitle">Daily Mix 3</div>
+                <div class="containerArtists">Pritam, Kritiman Mishra, A.R. Rahman and more</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1E35i8bGL86Ilh" class="last container vertical">
+                <img class="containerImg" src="Images/mix4.jpg" alt="">
+                <div class="containerTitle">Daily Mix 4</div>
+                <div class="containerArtists">Badshah, The PropheC, Vishal Mishra and more</div>
+            </a>
+        </div>
+
+        <h1>Today's Biggest Hits</h1>
+        <div class="containerBox">
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX9tPFwDMOaN1" class="container vertical">
+                <img class="containerImg" src="Images/play5.jpg" alt="">
+                <div class="containerTitle">K-Pop ON!</div>
+                <div class="containerArtists">New look and feel, same old playlist you love.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX0XUfTFmNBRM" class="container vertical">
+                <img class="containerImg" src="Images/hit2.jpg" alt="">
+                <div class="containerTitle">Top Hits Hindi</div>
+                <div class="containerArtists">Hottest Hindi music served here.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX1dCsSMSXSsP" class="container vertical">
+                <img class="containerImg" src="Images/hit3.jpg" alt="">
+                <div class="containerTitle">Pop Shots</div>
+                <div class="containerArtists">All your pop favorites.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DWXtlo6ENS92N" class="last container vertical">
+                <img class="containerImg" src="Images/hit4.jpg" alt="">
+                <div class="containerTitle">Bolly Butter</div>
+                <div class="containerArtists">The finest quality of Bollywood music handpicked for you.</div>
+            </a>
+        </div>
+
+        <h1>Popular Albums</h1>
+        <div class="containerBox">
+            <a href="https://open.spotify.com/album/7JXaassDX0q7XtdJLepSGd" class="container vertical">
+                <img class="containerImg" src="Images/album1.jpg" alt="">
+                <div class="containerTitle">Jalebi Baby</div>
+                <div class="containerArtists">Tesher & Jason Derulo</div>
+            </a>
+            <a href="https://open.spotify.com/album/2ifXB65SLpF97vWZjKGpQ9" class="container vertical">
+                <img class="containerImg" src="Images/album2.jpg" alt="">
+                <div class="containerTitle">Shiddat</div>
+                <div class="containerArtists">Multiple Artists</div>
+            </a>
+            <a href="https://open.spotify.com/album/3Msv5MSxcayA4sbQpQhXzu" class="container vertical">
+                <img class="containerImg" src="Images/album3.jpg" alt="">
+                <div class="containerTitle">Not By Chance</div>
+                <div class="containerArtists">AP Dhillon & Gurinder Gill</div>
+            </a>
+            <a href="https://open.spotify.com/album/5BLwx5IlfoWOrjJJ3i7gbK" class="last container vertical">
+                <img class="containerImg" src="Images/album4.jpg" alt="">
+                <div class="containerTitle">Shershaah</div>
+                <div class="containerArtists">Multiple Artists</div>
+            </a>
+        </div>
+
+        <h1>Workout Sessions</h1>
+        <div class="containerBox">
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX76Wlfdnj7AP" class="container vertical">
+                <img class="containerImg" src="Images/workout1.jpg" alt="">
+                <div class="containerTitle">Beast Mode</div>
+                <div class="containerArtists">Get your beast mode on!</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX70RN3TfWWJh" class="container vertical">
+                <img class="containerImg" src="Images/workout2.jpg" alt="">
+                <div class="containerTitle">Work Out</div>
+                <div class="containerArtists">Pop hits to keep your workout fresh.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DXdxcBWuJkbcy" class="container vertical">
+                <img class="containerImg" src="Images/workout3.jpg" alt="">
+                <div class="containerTitle">Motivation Mix</div>
+                <div class="containerArtists">Uplifting and energetic music to stay motivated.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DWUVpAXiEPK8P" class="last container vertical">
+                <img class="containerImg" src="Images/workout4.jpg" alt="">
+                <div class="containerTitle">Power Workout</div>
+                <div class="containerArtists">For any activity that may need a punch of intensity!</div>
+            </a>
+        </div>
+
+        <h1>Podcasts For You</h1>
+        <div class="containerBox">
+            <a href="https://open.spotify.com/show/3wOFLfLiWLPQzA7PwCunv8" class="container vertical">
+                <img class="containerImg" src="Images/pod1.jpg" alt="">
+                <div class="containerTitle">Millennial Money</div>
+                <div class="containerArtists">Shannah Compton Game</div>
+            </a>
+            <a href="https://open.spotify.com/show/476C4KTZu84Q6VbLPv23qo" class="container vertical">
+                <img class="containerImg" src="Images/pod3.jpg" alt="">
+                <div class="containerTitle">Digital Baba</div>
+                <div class="containerArtists">Swami Ram Shankar</div>
+            </a>
+            <a href="https://open.spotify.com/show/3meuFB3WmtNgKUHmIYfvTd" class="container vertical">
+                <img class="containerImg" src="Images/pod2.jpg" alt="">
+                <div class="containerTitle">In Your Element</div>
+                <div class="containerArtists">Matthew Adler</div>
+            </a>
+            <a href="https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk" class="last container vertical">
+                <img class="containerImg" src="Images/pod4.jpg" alt="">
+                <div class="containerTitle">The Joe Rog..</div>
+                <div class="containerArtists">Joe Rogan</div>
+            </a>
+        </div>
+
+
+        <h1>India's Best</h1>
+        <div class="containerBox">
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX5cZuAHLNjGz" class="container vertical">
+                <img class="containerImg" src="Images/best1.jpg" alt="">
+                <div class="containerTitle">Punjabi 101</div>
+                <div class="containerArtists">Enjoy the ultimate 101 Punjabi hits.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX5q67ZpWyRrZ" class="container vertical">
+                <img class="containerImg" src="Images/best2.jpg" alt="">
+                <div class="containerTitle">Indie India</div>
+                <div class="containerArtists">The best of the country's independent artists.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX5VOFoIqmrOV" class="container vertical">
+                <img class="containerImg" src="Images/best3.jpg" alt="">
+                <div class="containerTitle">Tollywood Pearls</div>
+                <div class="containerArtists">The finest set of Telugu music from the past 5 years.</div>
+            </a>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DX0TyiNWW7uUQ" class="last container vertical">
+                <img class="containerImg" src="Images/best4.jpg" alt="">
+                <div class="containerTitle">Kollywood Cream</div>
+                <div class="containerArtists">Finest collection of Tamil Music from the past decade.</div>
+            </a>
+        </div>
+    </main>
+</body>
+
+<script src="extra.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> setTimeout(function () { $('.loaderbg').fadeToggle(); }, 3000); </script>
+
+
+</html>

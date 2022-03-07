@@ -1,0 +1,32 @@
+/* CSS FILE */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background-image: linear-gradient(darkgreen, black, black);
+    background-attachment: fixed;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+}
+h1 {
+    font-size: 5rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-shadow: 0px 0px 3px white;
+    margin: 1rem;
+    padding-left: 3rem;
+    text-transform: uppercase;
+}
+pre{
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}

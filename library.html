@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spotify - Web Player</title>
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/fd5018a833.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="script.css">
+
+    <style>
+        main {
+            height: 73vh;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="loaderbg">
+        <div class="loader"></div>
+    </div>
+
+    <div class="navBar">
+
+        <div>
+            <a href="index.html"><img class="logo" src="Images/navLogo.png" alt="Error"></a>
+
+            <div class="part">
+                <div class="button">
+                    <img src="https://img.icons8.com/material-rounded/22/ffffff/home.png" /><a href="index.html">Home</a>
+                </div>
+                <div class="button">
+                    <img src="https://img.icons8.com/ios-glyphs/22/ffffff/search--v1.png" /><a target="_blank"
+                        href="https://open.spotify.com/search">Search</a>
+                </div>
+                <div class="button">
+                    <img
+                        src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/22/ffffff/external-playlist-music-royyan-wijaya-detailed-outline-royyan-wijaya.png" /><a
+                        href="#">Your Library</a>
+                </div> <br>
+                <div class="button bold"><img class="bgPlus"
+                        src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/20/000000/external-plus-user-interface-tanah-basah-detailed-outline-tanah-basah-2.png" /><a
+                        href="#">Create Playlist</a>
+                </div>
+                <div class="button bottomLine bold">
+                    <img class="bgHeart" src="https://img.icons8.com/ios-glyphs/16/ffffff/like--v1.png" /><a
+                        href="liked.html">Liked
+                        Songs</a>
+                </div>
+            </div>
+        </div>
+        <div class="button download bold">
+            <img
+                src="https://img.icons8.com/external-those-icons-lineal-those-icons/23/ffffff/external-down-arrows-those-icons-lineal-those-icons.png" /><a
+                href="https://open.spotify.com/download" target="_blank">Install App</a>
+        </div>
+    </div>
+
+    <div class="player">
+
+        <div class="horizontal">
+            <img class="playerImg" src="Images/null.png" alt="Error">
+
+            <div class="vertical">
+                <div id="name1" class="underline bold">No Track Playing</div>
+                <div>
+                    <marquee id="name2" class="underline"> Pick Your Song</marquee>
+                </div>
+            </div>
+
+            <div title="Save To Your Library" class="favourite"><i class="fas fa-heart"></i></div>
+
+            <div title="YouTube" class="favourite"><i class="fas fa-play"></i></div>
+        </div>
+
+
+        <div class="controlProgress">
+            <div class="vertical">
+                <div class="controls horizontal">
+                    <i title="Shuffle" style="font-size: 1.2rem;" class="fas fa-sort" id="shuffle"></i>
+                    <i title="Previous" style="font-size: 1.2rem;" class="fas fa-solid fa-backward" id="prev"></i>
+                    <i class="fa-3x fas fa-solid fa-play-circle" id="playPause"></i>
+                    <i title="Next" style="font-size: 1.2rem;" class="fas fa-solid fa-forward" id="next"></i>
+                    <i title="Repeat" id="loop" style="font-size: 1.2rem;" class="fas fa-recycle"></i>
+                </div>
+
+                <div class="progressBar horizontal">
+                    <div id="start">00:00</div>
+                    <input type="range" class="progress" min="0" value="0" max="100">
+                    <div id="end">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features horizontal">
+
+            <div title="Lyrics" class="lyrics"><a id="lyricsLink" href="#"><i class="fas fa-music"></i></a>
+            </div>
+
+            <div title="Queue" class="queue"><a id="lyricsLink" href="#"><i class="fas fa-list"></i></a>
+            </div>
+
+            <div class="volume horizontal">
+                <img class="mute hidden" src="https://img.icons8.com/ios/50/ffffff/no-audio--v1.png" />
+                <img class="mute hidden" src="https://img.icons8.com/ios/50/ffffff/low-volume.png" />
+                <img class="mute" src="https://img.icons8.com/ios/50/ffffff/high-volume--v1.png" />
+                <input id="volumeBar" type="range" class="vol" min="0" value="100" max="100">
+            </div>
+
+        </div>
+    </div>
+
+    <main>
+
+        <div class="top">
+
+            <div class="horizontal">
+                <a href="#" class="circle"><i class="fas fa-angle-left"></i></a>
+                <a href="#" class="circle"><i class="fas fa-angle-right"></i></a>
+            </div>
+
+            <div class="horizontal">
+                <a target="_blank" href="https://www.spotify.com/us/premium/" class="upgrade">UPGRADE</a>
+                <div class="profile horizontal">
+                    <img class="userImg" src="Images/face.jpg" alt="">
+                    <div class="userName">theorangeyakco</div>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <h1>Your Playlists</h1>
+        <div class="likedBox">
+            <a href="liked.html" class="liked">
+                <div class="likedTitle">Liked Songs</div>
+                <div class="likedCount">30 Liked Songs</div>
+            </a>
+            <a href="#" class="container vertical">
+                <img class="containerImg" src="Images/noSong.jpg" alt="">
+                <div class="containerTitle">Create A New</div>
+                <div class="containerArtists">By theorangeyakco</div>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> setTimeout(function () { $('.loaderbg').fadeToggle(); }, 2000); </script>
+
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spotify - Web Player</title>
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/fd5018a833.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="script.css">
+
+    <style>
+        body {
+            background: rgb(18, 18, 18);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- <div class="loaderbg">
+        <div class="loader"></div>
+    </div> -->
+
+    <div class="navBar">
+
+        <div>
+            <a href="index.html"><img class="logo" src="Images/navLogo.png" alt="Error"></a>
+
+            <div class="part">
+                <div class="button">
+                    <img src="https://img.icons8.com/material-rounded/22/ffffff/home.png" /><a href="index.html">Home</a>
+                </div>
+                <div class="button">
+                    <img src="https://img.icons8.com/ios-glyphs/22/ffffff/search--v1.png" /><a target="_blank"
+                        href="https://open.spotify.com/search">Search</a>
+                </div>
+                <div class="button">
+                    <img
+                        src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/22/ffffff/external-playlist-music-royyan-wijaya-detailed-outline-royyan-wijaya.png" /><a
+                        href="library.html">Your Library</a>
+                </div> <br>
+                <div class="button bold"><img class="bgPlus"
+                        src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/20/000000/external-plus-user-interface-tanah-basah-detailed-outline-tanah-basah-2.png" /><a
+                        href="#">Create Playlist</a>
+                </div>
+                <div class="button bottomLine bold">
+                    <img class="bgHeart" src="https://img.icons8.com/ios-glyphs/16/ffffff/like--v1.png" /><a
+                        href="#">Liked
+                        Songs</a>
+                </div>
+            </div>
+        </div>
+        <div class="button download bold">
+            <img
+                src="https://img.icons8.com/external-those-icons-lineal-those-icons/23/ffffff/external-down-arrows-those-icons-lineal-those-icons.png" /><a
+                href="https://open.spotify.com/download" target="_blank">Install App</a>
+        </div>
+    </div>
+
+    <div class="player">
+
+        <div class="horizontal">
+            <img class="playerImg" src="Images/null.png" alt="Error">
+
+            <div class="vertical">
+                <div id="name1" class="underline bold">No Track Playing</div>
+                <div>
+                    <marquee id="name2" class="underline"> Pick Your Song</marquee>
+                </div>
+            </div>
+
+            <div title="Save To Your Library" class="favourite"><i class="fas fa-heart"></i></div>
+
+            <div title="YouTube" class="favourite"><i class="fas fa-play"></i></div>
+        </div>
+
+
+        <div class="controlProgress">
+            <div class="vertical">
+                <div class="controls horizontal">
+                    <i title="Shuffle" style="font-size: 1.2rem;" class="fas fa-sort" id="shuffle"></i>
+                    <i title="Previous" style="font-size: 1.2rem;" class="fas fa-solid fa-backward" id="prev"></i>
+                    <i class="fa-3x fas fa-solid fa-play-circle" id="playPause"></i>
+                    <i title="Next" style="font-size: 1.2rem;" class="fas fa-solid fa-forward" id="next"></i>
+                    <i title="Repeat" id="loop" style="font-size: 1.2rem;" class="fas fa-recycle"></i>
+                </div>
+
+                <div class="progressBar horizontal">
+                    <div id="start">00:00</div>
+                    <input type="range" class="progress" min="0" value="0" max="100">
+                    <div id="end">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features horizontal">
+
+            <div title="Lyrics" class="lyrics"><a id="lyricsLink" href="#"><i class="fas fa-music"></i></a>
+            </div>
+
+            <div title="Queue" class="queue"><a id="lyricsLink" href="#"><i class="fas fa-list"></i></a>
+            </div>
+
+            <div class="volume horizontal">
+                <img id="mute1" class="hidden" src="https://img.icons8.com/ios/50/ffffff/no-audio--v1.png" />
+                <img id="mute2" class="hidden" src="https://img.icons8.com/ios/50/ffffff/low-volume.png" />
+                <img id="mute3" class="" src="https://img.icons8.com/ios/50/ffffff/high-volume--v1.png" />
+                <input id="volumeBar" type="range" class="vol" min="0" value="100" max="100">
+            </div>
+
+        </div>
+    </div>
+    <main>
+
+        <div class="top">
+
+            <div class="horizontal">
+                <a href="#" class="circle"><i class="fas fa-angle-left"></i></a>
+                <a href="#" class="circle"><i class="fas fa-angle-right"></i></a>
+            </div>
+
+            <div class="horizontal">
+                <a target="_blank" href="https://www.spotify.com/us/premium/" class="upgrade">UPGRADE</a>
+                <div class="profile horizontal">
+                    <img class="userImg" src="Images/face.jpg" alt="">
+                    <div class="userName">theorangeyakco</div>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="banner">
+
+            <img class="likedImg" src="Images/likedLogo.jpg" alt="">
+            <div class="likedHead">
+                <div class="likedTwo">PLAYLIST</div>
+                <div class="likedOne">Liked Songs</div>
+                <div class="likedTwo">@theorangeyakco &middot; 30 Songs</div>
+            </div>
+        </div>
+
+        <div class="songList">
+
+            <div class="tableHead">
+                <div class="cover"><i class="fa fa-solid fa-music"></i></div>
+                <span class="songName">TITLE</span>
+                <span class="hide"><i class="fa fa-solid fa-clock"></i></span>
+                <span class="favourite">ADD</span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song1.jpg" alt="Error">
+                <span id="1" class="songName">EXCUSES<br>AP Dhillon, Gurinder Gill, Insane</span>
+                <span class="hide">02 : 56</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song2.jpg" alt="Error">
+                <span id="2" class="songName">RAATAN LAMBIYAAN<br>Jubin Nautiyal, Others</span>
+                <span class="hide">03 : 50</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song3.jpg" alt="Error">
+                <span id="3" class="songName">DESIRES<br>AP Dhillon, Gurinder Gill, Others</span>
+                <span class="hide">02 : 48</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song4.jpg" alt="Error">
+                <span id="4" class="songName">DOOBEY<br>OAFF, Kausar Munir, Lothika</span>
+                <span class="hide">03 : 39</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song5.jpg" alt="Error">
+                <span id="5" class="songName">RANJHA<br>B Praak, Jasleen, Romy, Anvita Dutt</span>
+                <span class="hide">03 : 48</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song6.jpg" alt="Error">
+                <span id="6" class="songName">INSANE<br>AP Dhillon, Gurinder Gill, Others</span>
+                <span class="hide">03 : 26</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song7.jpg" alt="Error">
+                <span id="7" class="songName">SRIVALLI<br>Javed Ali, Devi Sri Prasad</span>
+                <span class="hide">03 : 44</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song8.jpg" alt="Error">
+                <span id="8" class="songName">HEAT WAVES<br>Glass Animals (Dreamland)</span>
+                <span class="hide">03 : 58</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song9.jpg" alt="Error">
+                <span id="9" class="songName">TERE TE<br>AP Dhillon, Gurinder Gill, Insane</span>
+                <span class="hide">01 : 54</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song10.jpg" alt="Error">
+                <span id="10" class="songName">OO ANTAVA<br>Indravathi Chauhan</span>
+                <span class="hide">03 : 43</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song11.jpg" alt="Error">
+                <span id="11" class="songName">BROWN MUNDE<br>AP Dhillon, Gurinder Gill, Others</span>
+                <span class="hide">04 : 14</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song12.jpg" alt="Error">
+                <span id="12" class="songName">STAY<br>The Kid Laroi, Justin Bieber</span>
+                <span class="hide">02 : 21</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song13.jpg" alt="Error">
+                <span id="13" class="songName">BIJLEE BIJLEE<br>Harrdy Sandhu</span>
+                <span class="hide">02 : 48</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song14.jpg" alt="Error">
+                <span id="14" class="songName">RAIT ZARA SI<br>AR Rahman, Arijit Singh, Sashaa</span>
+                <span class="hide">04 : 51</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song15.jpg" alt="Error">
+                <span id="15" class="songName">SPACESHIP<br>AP Dhillon, Ghinda Kahlon, Gminxr</span>
+                <span class="hide">02 : 04</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song16.jpg" alt="Error">
+                <span id="16" class="songName">TU AAKE DEKHLE<br>King</span>
+                <span class="hide">04 : 30</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song17.jpg" alt="Error">
+                <span id="17" class="songName">ADIYE<br>Dhibu Ninan Thomas, Kapil Kapilan</span>
+                <span class="hide">04 : 32</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song18.jpg" alt="Error">
+                <span id="18" class="songName">INDUSTRY BABY<br>Lil Nas X, Jack Harlow</span>
+                <span class="hide">03 : 32</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song19.jpg" alt="Error">
+                <span id="19" class="songName">MA BELLE<br>AP Dhillon, Amari, Others</span>
+                <span class="hide">02 : 40</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song20.jpg" alt="Error">
+                <span id="20" class="songName">GEHRAIYAAN<br>OAFF, Ankur Tiwari, Lothika</span>
+                <span class="hide">02 : 59</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song21.jpg" alt="Error">
+                <span id="21" class="songName">WE ROLLIN<br>Shubh</span>
+                <span class="hide">03 : 19</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song22.jpg" alt="Error">
+                <span id="22" class="songName">JUGNU<br>Badshah, Nikhita Gandhi</span>
+                <span class="hide">03 : 50</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song23.jpg" alt="Error">
+                <span id="23" class="songName">AGAR TUM SAATH HO<br>Arijit Singh</span>
+                <span class="hide">05 : 41</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song24.jpg" alt="Error">
+                <span id="24" class="songName">LOVE NWANTITI<br>CKay, DJ Yo!, Ax'el</span>
+                <span class="hide">03 : 08</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song25.jpg" alt="Error">
+                <span id="25" class="songName">ENEMY<br>Imagine Dragons, JID, Arcane</span>
+                <span class="hide">02 : 53</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song26.jpg" alt="Error">
+                <span id="26" class="songName">LET ME DOWN SLOWLY<br>Alec Benjamin</span>
+                <span class="hide">02 : 49</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song27.jpg" alt="Error">
+                <span id="27" class="songName">DIL KO KARAAR AAYA<br>Yasser Desai, Neha Kakkar</span>
+                <span class="hide">03 : 51</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song28.jpg" alt="Error">
+                <span id="28" class="songName">TOXIC<br>AP Dhillon, Intense, Others</span>
+                <span class="hide">03 : 04</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song29.jpg" alt="Error">
+                <span id="29" class="songName">KINA CHIR<br>The ProcheC</span>
+                <span class="hide">03 : 36</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+            <div class="song">
+                <img class="cover" src="Images/song30.jpg" alt="Error">
+                <span id="30" class="songName">YKWIM<br>Karan Aujla, KR&dollar;NA, Mehar</span>
+                <span class="hide">03 : 14</span>
+                <span class="favourite"><i class="fas fa-heart"></i></span>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> setTimeout(function () { $('.loaderbg').fadeToggle(); }, 2000); </script>
+
+</html>
