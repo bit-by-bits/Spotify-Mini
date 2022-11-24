@@ -1,2 +1,4 @@
-# ACM-Frontend-Task
-To clone the Spotify API till March 01, 2022
+## Spotify-Mini
+
+A static Spotify clone made using `vanilla HTML, CSS and JS`. <br />
+Temporarily hosted at https://bit-by-bits.github.io/Spotify-Mini/
